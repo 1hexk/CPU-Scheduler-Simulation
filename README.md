@@ -40,6 +40,18 @@ The program offers flexibility in output format preferences. A table format is s
 
 Simulating an operating system involves emulating key features such as I/O operations, memory management, and other functionalities. This requires additional classes and functions in the program to handle specific tasks associated with operating systems.
 
+## Structure of the Input File
+
+A sample input file of three jobs is given as follows (Process ID: burst time in ms; Memory required in MB):
+
+```
+[Begin of job.txt] 
+1:25;500 
+2:13;700 
+3:20;100 
+[End of job.txt]
+```
+
 ## Conclusion
 
 In conclusion, this project simulates CPU scheduling behavior using various algorithms, providing insights into their functioning and impact on system performance. The practical experience gained in building Java programs and incorporating multi-threading concepts is invaluable. The resulting simulation can be used to compare and evaluate different CPU scheduling algorithms.
