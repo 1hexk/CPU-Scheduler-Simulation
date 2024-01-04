@@ -20,15 +20,19 @@ A sample input file format for three jobs is as follows:
 3:20;100 
 [End of job.txt]
 ```
-
+###  Input File:
+1) There are no more than 30 jobs in the input file (input.txt). 
+2) Processes arrive in the order they are read from the file for FCFS and RR-10. 
 ## Output
 
 The program compares the average waiting times and the average turnaround times of all jobs for each scheduling algorithm. Detailed output, including the selected jobs at specific times, starting and stopping burst values, will be displayed in Gantt chart.
 
 ## Additional Considerations
 
-- **Software and Hardware Tools Used:**
+- **Software and Hardware Used:**
   - The program is developed using the Java Development Kit (JDK) and the Eclipse Integrated Development Environment (IDE).
+  -  Main memory is limited to 1024 MB.
+  - Context switching time is zero.
 
 
 
