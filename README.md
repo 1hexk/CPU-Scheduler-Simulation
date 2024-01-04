@@ -1,48 +1,17 @@
-﻿# CPU Scheduler Simulation in Java
+﻿
+# CPU Scheduler Simulation Project
 
-## Project Overview
+## Project Objective
 
-The study of CPU scheduling algorithms is a critical aspect of computer science and systems programming. In this project, we have developed a Java program to simulate the behavior of a CPU Scheduler. The simulation considers a simple system with a single CPU serving multiple jobs arriving at time 0. Three scheduling algorithms are implemented: First-Come-First-Serve (FCFS), Round-Robin (RR) with a quantum of 10ms, and Multi-level queue with two Round-Robins (quantum = 8ms for the first and quantum = 16ms for the second) and a First-Come-First-Serve.
+The objective of this project is to develop a Java program that simulates the behavior of a CPU Scheduler, creating multiple threads to perform specific tasks in the simulation. The focus is on implementing three distinct scheduling algorithms: First-Come-First-Serve (FCFS), Round-Robin (RR) with a quantum of 10ms, and Multi-level feedback queue (RR8, RR16, and FCFS).
 
-## Software and Hardware Tools Used
+## System Description
 
-The program is built using the Java Development Kit (JDK) and the Eclipse Integrated Development Environment (IDE).
+Consider a simple system with a single CPU that serves multiple jobs arriving at time 0. Each job has a Process Control Block (PCB) containing essential information such as ID, state, burst time, required memory, and necessary statistics (turnaround time and waiting time). The program reads process information from a file (input.txt) in an independent thread, creating PCBs and placing them in the job queue. Another thread continuously checks memory availability and loads jobs from the queue to the ready queue, ensuring sufficient memory space. The main thread executes the selected scheduling algorithm, allowing the user to choose from the available options.
 
-## Strengths and Weaknesses
+### Structure of the Input File
 
-### Strengths
-- The program reads process data from a file and implements three scheduling algorithms, enabling users to compare results.
-- Users can easily test various scenarios by changing input data.
-- Results of each algorithm are printed, allowing for a comprehensive analysis.
-
-### Weaknesses
-- The program lacks an aging mechanism, potentially leading to processes with long waiting times not being executed promptly.
-
-## Threads Created
-
-Two threads are implemented in the program:
-
-1. **Read Thread:**
-   - Reads the input file, parses the data, and stores it in a data structure for further processing.
-
-2. **Algorithm Thread:**
-   - Implements the chosen scheduling algorithm, schedules jobs, and manages resources efficiently.
-
-## Multithreading Speed-Up Performance
-
-Multithreading enhances application performance by allowing multiple tasks to run concurrently, optimizing resource usage. However, it introduces complexity and potential issues such as race conditions and deadlocks.
-
-## Output Method
-
-The program offers flexibility in output format preferences. A table format is suggested for educational purposes, presenting all relevant data for each operation concisely.
-
-## Simulating the Operating System
-
-Simulating an operating system involves emulating key features such as I/O operations, memory management, and other functionalities. This requires additional classes and functions in the program to handle specific tasks associated with operating systems.
-
-## Structure of the Input File
-
-A sample input file of three jobs is given as follows (Process ID: burst time in ms; Memory required in MB):
+A sample input file format for three jobs is as follows:
 
 ```
 [Begin of job.txt] 
@@ -52,6 +21,16 @@ A sample input file of three jobs is given as follows (Process ID: burst time in
 [End of job.txt]
 ```
 
-## Conclusion
+## Output
 
-In conclusion, this project simulates CPU scheduling behavior using various algorithms, providing insights into their functioning and impact on system performance. The practical experience gained in building Java programs and incorporating multi-threading concepts is invaluable. The resulting simulation can be used to compare and evaluate different CPU scheduling algorithms.
+The program compares the average waiting times and the average turnaround times of all jobs for each scheduling algorithm. Detailed output, including the selected jobs at specific times, starting and stopping burst values, will be displayed in Gantt chart.
+
+## Additional Considerations
+
+- **Software and Hardware Tools Used:**
+  - The program is developed using the Java Development Kit (JDK) and the Eclipse Integrated Development Environment (IDE).
+
+
+
+- **Threads Created:**
+  - Two threads are implemented: one for reading the input file and the other for executing the chosen scheduling algorithm.
